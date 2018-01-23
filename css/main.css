@@ -203,6 +203,7 @@ body .button:hover {
   .contacts {
     padding: 16px;
     background: #111 url("../img/contacts_bg_mobile.png") no-repeat center;
+    background-size: cover;
   }
 }
 .contacts__info {
@@ -1001,8 +1002,8 @@ body.loaded .header {
 .main-slider__nav {
   position: absolute;
   bottom: 0;
-  right: 32px;
-  width: calc(160px * 6);
+  left: 32px;
+  width: calc(100% - 64px);
   height: 128px;
   z-index: 5;
   opacity: 0;

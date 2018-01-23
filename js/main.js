@@ -90,6 +90,12 @@ document.querySelector('.js-show-photos').addEventListener('click', function (e)
 document.querySelector('.js-show-contacts').addEventListener('click', function (e) {
   document.body.classList.remove('show-photos');
 });
+
+window.addEventListener('load', function () {
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+  }, 200);
+});
 //endregion
 
 
@@ -146,11 +152,11 @@ var MainSlider = function () {
 
       nav: {
         cellSelector: '.main-slider__slide-nav',
-        cellAlign: window.innerWidth < 768 ? 'left' : 'right',
+        cellAlign: 'left',
         asNavFor: '.js-main-slider',
         prevNextButtons: false,
         pageDots: false,
-        wrapAround: true,
+        wrapAround: false,
         groupCells: true,
         contain: true
       }
@@ -180,12 +186,6 @@ var MainSlider = function () {
           }
         });
       }
-
-      window.addEventListener('load', function () {
-        window.setTimeout(function () {
-          document.body.classList.add('loaded');
-        }, 1000);
-      });
     }
   }, {
     key: 'init',
